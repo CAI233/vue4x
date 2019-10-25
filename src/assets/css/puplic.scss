@@ -1,0 +1,101 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #888;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    display: block;
+    background-color: #e8ebed;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,
+th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin: 0;
+  padding: 0;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+// ::-webkit-scrollbar
+// {
+//   width: 8px;
+//   height: 8px;
+//   background-color: #888;
+// }
+
+// /*定义滚动条轨道 内阴影+圆角*/
+// ::-webkit-scrollbar-track
+// {
+//   -webkit-box-shadow: inset 0 0 6px #E8EBED;
+//   border-radius: 10px;
+//   background-color: #888;
+// }
+
+// /*定义滑块 内阴影+圆角*/
+// ::-webkit-scrollbar-thumb
+// {
+//   border-radius: 10px;
+//   -webkit-box-shadow: inset 0 0 6px #E8EBED;
+//   background-color: #888;
+// }
+// 清除浮动
+.f-clear::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.f-clear-l{
+    float: left;
+}
+.f-clear-r{
+    float: right;
+}
+// 弹性布局
+//横向排列
+.f-flex{
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+//竖直排列
+.f-flex-vertical{
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+//水平居中
+.f-flex-center{
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+//垂直居中
+.f-flex-column{
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+//container
+.layout .contanier{
+    padding-left: 250px;
+    height:calc(100% - 70px);
+    // background: #fff;
+    box-sizing: border-box;
+}
+.layout-noside .contanier{
+    padding-left:0;
+}
+.contanier .content{
+    background: #fff;
+    height: calc(100%);
+}
