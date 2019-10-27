@@ -5,10 +5,10 @@
     </div>
     <div class="header-c f-clear-l">
         <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="用户管理" name="first"></el-tab-pane>
-            <el-tab-pane label="配置管理" name="second"></el-tab-pane>
-            <el-tab-pane label="角色管理" name="third"></el-tab-pane>
-            <el-tab-pane label="定时任务补偿" name="fourth"></el-tab-pane>
+            <el-tab-pane label="用户管理" name="/user"></el-tab-pane>
+            <el-tab-pane label="配置管理" name="/config"></el-tab-pane>
+            <el-tab-pane label="角色管理" name="/role"></el-tab-pane>
+            <el-tab-pane label="信息管理" name="/info"></el-tab-pane>
         </el-tabs>
     </div>
     <div class="header-r f-clear-r">
@@ -21,7 +21,7 @@
   export default {
     data() {
     return {
-        activeName: 'second'
+        activeName: '/user'
         };
     },
     components: {
@@ -29,6 +29,8 @@
     },
     methods:{
         handleClick(tab, event) {
+            console.log(this.activeName);
+            this.$router.push({path:this.activeName});
             console.log(tab, event);
         }
     }

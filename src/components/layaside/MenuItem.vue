@@ -1,23 +1,17 @@
 <template>
-  <div>
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+  <div style="padding: 10px;
+    border-bottom: 1px solid #ccc;curser:pointer;" @click="goPath(path)">
+    <p>这是{{name}}</p>
+    <!-- <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>导航一</span>
         </template>
         <el-menu-item-group>
-          <template slot="title">分组一</template>
           <el-menu-item index="1-1">选项1</el-menu-item>
           <el-menu-item index="1-2">选项2</el-menu-item>
         </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
       </el-submenu>
       <el-menu-item index="2">
         <i class="el-icon-menu"></i>
@@ -27,7 +21,8 @@
         <i class="el-icon-setting"></i>
         <span slot="title">导航三</span>
       </el-menu-item>
-    </el-menu>
+    </el-menu> -->
+
   </div>
 </template>
 
@@ -37,7 +32,15 @@
       path: {
         type: String,
         required: true
+      },
+      isCollapse:{
+        type:Boolean,
+        default:false
+      },
+      name:{
+        type: String,
       }
+      
     },
     data () {
       return {
@@ -50,6 +53,10 @@
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+      },
+      goPath(path){
+        console.log(path);
+        this.$router.push(path)
       }
     },
     mounted () {

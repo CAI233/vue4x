@@ -27,7 +27,7 @@
         margin-top: 70px;
         height:calc(100% - 70px);
         overflow: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
         transition: padding-top .3s;
         background: #fff
     }

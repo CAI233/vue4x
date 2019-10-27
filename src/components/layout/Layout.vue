@@ -6,7 +6,7 @@
     <slot></slot>
     <!-- 右边页面 -->
     <div class="layout-content">
-      <router-view></router-view>
+      <router-view />
     </div>
   </div>
 </template>

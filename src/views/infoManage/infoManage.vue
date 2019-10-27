@@ -1,10 +1,9 @@
 <template>
 <c-layout>
   <c-panel :title='title'>
-    <div slot="right"><div>这是要插入的内容</div></div>
+    <div slot="right"><div>信息管理</div></div>
     <c-menu>
       <c-menu-item path="/sys/user" icon="address-book" name="用户管理"/>
-      <c-menu-item path="/sys/role" icon="address-book" name="角色管理"/>
     </c-menu>
   </c-panel>
   <!-- <div class="contanier">
@@ -35,7 +34,6 @@ export default {
   methods:{
     handleClick(tab, event) {
       console.log(tab, event);
-      let aa = '1234';
     }
   }
 };
