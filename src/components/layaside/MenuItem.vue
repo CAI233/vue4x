@@ -1,29 +1,20 @@
 <template>
-  <div style="padding: 10px;
-    border-bottom: 1px solid #ccc;curser:pointer;" @click="goPath(path)">
-    <p>这是{{name}}</p>
-    <!-- <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-    </el-menu> -->
-
-  </div>
+  <!-- <div > -->
+    <!-- <p>这是{{name}}</p> -->
+    <el-submenu :index="indexNum.toString()" v-if="childList && childList.length>0" >
+      <template slot="title">
+        <i class="el-icon-location"></i>
+        <span>{{name}}</span>
+      </template>
+      <el-menu-item-group>
+        <el-menu-item @click="goName(item.name)" v-for="(item,index) in childList" :key="index" :index="indexNum.toString()+'-'+(index+1).toString()">{{item.meta.title}}</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
+    <el-menu-item :index="indexNum.toString()" v-else @click="goPath(path)">
+      <i class="el-icon-menu"></i>
+      <span slot="title">{{name}}</span>
+    </el-menu-item>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -39,6 +30,13 @@
       },
       name:{
         type: String,
+      },
+      indexNum:{
+        type:Number,
+        default:0
+      },
+      childList:{
+        type:Array,
       }
       
     },
@@ -57,10 +55,10 @@
       goPath(path){
         console.log(path);
         this.$router.push(path)
+      },
+      goName(name){
+        this.$router.push({name:name})
       }
-    },
-    mounted () {
-    
     }
   }
 </script>

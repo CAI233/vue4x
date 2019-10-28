@@ -86,13 +86,13 @@ th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,men
     align-items: center;
 }
 //container
-.layout .contanier{
+.layout .layout-content{
     padding-left: 250px;
     min-height:calc(100% - 70px);
     // background: #fff;
     box-sizing: border-box;
 }
-.layout-noside .contanier{
+.layout-noside .layout-content{
     padding-left:0;
 }
 .contanier .content{

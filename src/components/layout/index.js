@@ -1,10 +1,10 @@
-import layout from './Layout.vue';
+import Layout from './Layout.vue';
 import Header from './Header.vue';
 import Panel from './Panel.vue';
 import LayoutNoSide from './LayoutNoSide.vue';
 
-layout.Header = Header;
-layout.Panel = Panel;
-layout.LayoutNoSide = LayoutNoSide;
+Layout.Header = Header;
+Layout.Panel = Panel;
+Layout.LayoutNoSide = LayoutNoSide;
 
-export default layout;
+export default Layout;

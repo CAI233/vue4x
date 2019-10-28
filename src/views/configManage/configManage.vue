@@ -1,13 +1,12 @@
 <template>
   <c-layout>
     <c-panel :title='title'>
-      <c-menu>
+      <c-menu >
         <template v-if="routerList.length>0">
-          <c-menu-item v-for="(item,index) in routerList" :key="index" :path="nowPath+'/'+item.path" :name="item.name"/>
+          <c-menu-item v-for="(item,index) in routerList" :key="index" :path="nowPath+'/'+item.path" :indexNum="index+1" :name="item.meta.title" :childList="item.children"/>
         </template>
       </c-menu>
     </c-panel>
-    <!-- <slot></slot> -->
   </c-layout>
 </template>
 
@@ -25,16 +24,21 @@
     
   },
   methods:{
+   
     handleClick(tab, event) {
       console.log(tab, event);
     },
     getRoutes(){
       let allRoutes = this.$router.options.routes;
       var nowRoute = this.$route;
+      console.log(nowRoute);
       for(let j in allRoutes){
-        if(nowRoute.path == allRoutes[j].path){
+        if(nowRoute.path.indexOf(allRoutes[j].path) > -1){
           this.nowPath = allRoutes[j].path;
+          console.log(this.nowPath);
           this.routerList = allRoutes[j].children;
+          console.log(this.routerList);
+          break;
         }
       }
     }

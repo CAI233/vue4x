@@ -6,7 +6,8 @@
     <slot></slot>
     <!-- 右边页面 -->
     <div class="layout-content">
-      <router-view />
+      <c-lay-rumb></c-lay-rumb>
+      <router-view ></router-view>
     </div>
   </div>
 </template>
